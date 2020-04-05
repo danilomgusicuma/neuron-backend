@@ -7,7 +7,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+  origin:'https://www.institutoneuron.com.br'
+}));
 
 app.get('/consultation', (request,response)=>response.json({status:'ok'}))
 app.post('/consultation', sendEmailController.sendEmail)

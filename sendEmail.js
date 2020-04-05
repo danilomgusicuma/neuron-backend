@@ -21,15 +21,14 @@ module.exports = {
       text: `${body}`
     };
     console.log('sending email')
-    return response.json({status:'test'})
-    // transporter.sendMail(mailOptions, function(error, info){
-    //   if (error) {
-    //     console.log(error);
-    //     return response.json({status:error})
-    //   } else {
-    //     console.log('Email sent: ' + info.response);
-    //     return response.json({status:'ok'})
-    //   }
-    // });
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+        return response.json({status:error})
+      } else {
+        console.log('Email sent: ' + info.response);
+        return response.json({status:'ok'})
+      }
+    });
   }
 }
