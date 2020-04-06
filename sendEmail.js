@@ -18,7 +18,7 @@ module.exports = {
       from: 'consultas@institutoneuron.com.br',
       to: 'consultas@institutoneuron.com.br',
       subject: 'Nova Consulta (teste)',
-      text: `${body}`
+      text: `${JSON.stringify(body)}`
     };
     console.log('sending email')
     transporter.sendMail(mailOptions, function(error, info){
