@@ -17,7 +17,7 @@ module.exports = {
     var mailOptions = {
       from: 'consultas@institutoneuron.com.br',
       to: 'consultas@institutoneuron.com.br',
-      subject: 'Nova Consulta (teste)',
+      subject: 'Nova Consulta',
       text: `${JSON.stringify(body)}`
     };
     console.log('sending email')
